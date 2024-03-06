@@ -131,10 +131,13 @@ class FavoriteButtonState extends State<FavoriteButton> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        icon: const Icon(Icons.favorite_border),
+        icon: Icon(
+          isFavorite ? Icons.favorite : Icons.favorite_border,
+          color: Colors.red,
+        ),
         onPressed: () {
           setState(() {
-            isFavorite = !isFavorite
+            isFavorite = !isFavorite;
           });
         },
     );
